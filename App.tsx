@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
+  const [bool, setBool] = useState(false);
+  function onPress() {
+    setBool(!bool);
+  }
   return (
     <View style={styles.container}>
       <Text>App Teste</Text>
       <Text>Funcionando</Text>
-      <StatusBar style="auto" />
+      <Button title="Apertar aqui" onPress={() => onPress} />
     </View>
   );
 }
